@@ -1,0 +1,37 @@
+.cms-img-select{
+	border: 5px solid transparent;
+	width: calc(50% - 20px);
+	display: inline-block;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
+	margin: 5px;
+}
+.cms-img-select.selected{
+	border: 5px solid #0073aa;
+}
+.redux-sidebar .redux-sidebar-head {
+    border-bottom: 1px solid #e7e7e7;
+    color: #999;
+    padding: 15px;
+    text-align: center;
+}
+.redux-sidebar .redux-logo-main img {
+    max-width: 70%;
+}
+.redux-sidebar-head .abcore-redux-logo {
+    text-align: center;
+}
+.redux-sidebar-head .abcore-redux-logo img {
+    max-width: 70%;
+    width: 100%;
+}
+.redux-sidebar-head span {
+    display: block;
+    padding-top: 12px;
+    text-align: center;
+    font-weight: 700;
+}
+.redux-logo-text {
+    color: #666;
+    font-weight: 700;
+    text-transform: uppercase;
+}
