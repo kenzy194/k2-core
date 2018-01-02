@@ -99,4 +99,47 @@ function k2_require_folder($foldername,$path)
     }
 }
 
+function k2_get_template_file_e($template, $data = array())
+{
+    extract($data);
+    $template_file = $this->k2_get_template_file($template);
+    if ($template_file !== false) {
+        ob_start();
+        include $template_file;
+        echo ob_get_clean();
+    }
+}
+
+function k2_get_template_file__($template, $data = array())
+{
+    extract($data);
+    $template_file = k2_get_template_file($template);
+    if ($template_file !== false) {
+        ob_start();
+        include $template_file;
+        return ob_get_clean();
+    }
+    return false;
+}
+
+function k2_get_template_file($template, $dir = null)
+{
+
+    if ($dir === null) {
+        $dir = plugin_basename(k2core()->plugin_dir);
+    }
+
+    $template_file = get_template_directory() . DIRECTORY_SEPARATOR . $dir . DIRECTORY_SEPARATOR . $template . '.php';
+
+    if (file_exists($template_file)) {
+        return $template_file;
+    } else {
+        $template_file = k2core()->plugin_dir . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . $template . '.php';
+        if (file_exists($template_file)) {
+            return $template_file;
+        }
+    }
+    return false;
+}
+
 ?>

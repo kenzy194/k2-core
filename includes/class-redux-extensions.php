@@ -58,7 +58,7 @@ if (!class_exists('K2_Redux_Extensions')) {
 
                 if (!class_exists($extension_class)) {
                     // In case you wanted override your override, hah.
-                    $class_file = $path . $folder . '/extension_' . $folder . '.php';
+                     $class_file = $path . $folder . '/extension_' . $folder . '.php';
                     $class_file = apply_filters('redux/extension/' . $ReduxFramework->args['opt_name'] . '/' . $folder, $class_file);
                     if ($class_file) {
                         require_once($class_file);
